@@ -28,7 +28,6 @@ void PMread(uint64_t physicalAddress, word_t* value) {
  }
 
 void PMwrite(uint64_t physicalAddress, word_t value) {
-//    std::cout << "write " << value << " into physical address " << physicalAddress<< std::endl;
     if (RAM.empty())
         initialize();
 
@@ -39,7 +38,6 @@ void PMwrite(uint64_t physicalAddress, word_t value) {
 }
 
 void PMevict(uint64_t frameIndex, uint64_t evictedPageIndex) {
-//    std::cout << "evict " << evictedPageIndex << " from the frame " <<frameIndex<< std::endl;
     if (RAM.empty())
         initialize();
 

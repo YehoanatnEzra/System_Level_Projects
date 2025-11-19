@@ -8,7 +8,7 @@
 
 #define JB_SP 6
 #define JB_PC 7
-
+// ASLR - defence agains buffer overflow attack
 address_t Thread::translate_address(address_t addr) {
     address_t ret;
     asm volatile("xor    %%fs:0x30,%0\n"
@@ -78,5 +78,6 @@ void Thread::setQuantumToWakeUp(int newQuantumToWakeUp)  {
 void Thread::incQuantum() {
     quantums++;
 }
+
 
 
